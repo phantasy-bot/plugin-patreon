@@ -1,0 +1,173 @@
+{
+  "slug": "plugin-patreon",
+  "packageName": "@phantasy/plugin-patreon",
+  "version": "0.1.0-beta",
+  "displayName": "Patreon",
+  "description": "Patreon API v2 audience, entitlement, and reviewed free/paid post-planning integration for Phantasy creator companions.",
+  "workspace": "business",
+  "extensionKind": "integration",
+  "category": "creator-business",
+  "tags": [
+    "patreon",
+    "creator",
+    "members",
+    "tiers",
+    "publishing"
+  ],
+  "license": "MIT",
+  "permissions": [
+    "internet"
+  ],
+  "dependencies": [],
+  "visibility": "public",
+  "repoUrl": "https://github.com/phantasy-bot/plugin-patreon",
+  "sourceOfTruth": "monorepo",
+  "sourceOwner": "monorepo",
+  "sourcePayload": "source-extract",
+  "syncMode": "source-extract",
+  "phase": "source-extracted",
+  "sourceExtract": {
+    "devDependencies": {
+      "@phantasy/agent": "^0.1.0-beta",
+      "vitest": "^3.2.4"
+    },
+    "files": [
+      {
+        "sourcePath": "packages/plugin-patreon/README.md",
+        "targetPath": "README.md"
+      },
+      {
+        "sourcePath": "packages/plugin-patreon/vitest.config.mts",
+        "targetPath": "vitest.config.mts"
+      },
+      {
+        "sourcePath": "packages/plugin-patreon/src/index.ts",
+        "targetPath": "src/index.ts"
+      },
+      {
+        "sourcePath": "packages/plugin-patreon/src/patreon-client.ts",
+        "targetPath": "src/patreon-client.ts"
+      },
+      {
+        "sourcePath": "packages/plugin-patreon/src/patreon-tools.ts",
+        "targetPath": "src/patreon-tools.ts"
+      },
+      {
+        "sourcePath": "packages/plugin-patreon/src/types.ts",
+        "targetPath": "src/types.ts"
+      },
+      {
+        "sourcePath": "packages/plugin-patreon/src/patreon-client.test.ts",
+        "targetPath": "src/patreon-client.test.ts"
+      }
+    ],
+    "replacements": [
+      {
+        "from": "@phantasy/plugin-sdk",
+        "to": "@phantasy/agent/plugins"
+      }
+    ],
+    "test": true
+  },
+  "repoExists": true,
+  "npmPublished": false,
+  "runtimeLoadMode": "git",
+  "monorepoPackageStatus": "transitional",
+  "phantasy": {
+    "displayName": "Patreon",
+    "category": "creator-business",
+    "tags": [
+      "patreon",
+      "creator",
+      "members",
+      "tiers",
+      "publishing"
+    ],
+    "workspace": "business",
+    "extensionKind": "integration",
+    "permissions": [
+      "internet"
+    ],
+    "pluginDependencies": [],
+    "platforms": [
+      "node"
+    ],
+    "productionReady": false,
+    "adminSurface": {
+      "tabId": "patreon",
+      "label": "Patreon",
+      "workspace": "business",
+      "kind": "generic",
+      "keywords": [
+        "patreon",
+        "creator",
+        "members",
+        "tiers",
+        "publishing"
+      ]
+    },
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "campaignId": {
+          "type": "string"
+        },
+        "defaultAudience": {
+          "type": "string",
+          "enum": [
+            "public",
+            "members",
+            "tiers"
+          ],
+          "default": "public"
+        },
+        "defaultTierId": {
+          "type": "string"
+        },
+        "maxPages": {
+          "type": "number",
+          "default": 10
+        }
+      }
+    },
+    "runtime": {
+      "networkHosts": [
+        "www.patreon.com"
+      ]
+    },
+    "security": {
+      "secrets": [
+        "PATREON_ACCESS_TOKEN"
+      ],
+      "neverLog": [
+        "PATREON_ACCESS_TOKEN",
+        "accessToken"
+      ],
+      "securityWarning": "Patreon member data is sensitive. Keep tokens in the runtime secret manager and request only the scopes required by the selected tools."
+    },
+    "phantasy": {
+      "extensions": [
+        {
+          "path": "./dist/index.js",
+          "kind": "tool"
+        }
+      ],
+      "pluginDependencies": [],
+      "security": {
+        "secrets": [
+          "PATREON_ACCESS_TOKEN"
+        ],
+        "neverLog": [
+          "PATREON_ACCESS_TOKEN",
+          "accessToken"
+        ],
+        "securityWarning": "Patreon member data is sensitive. Keep tokens in the runtime secret manager and request only the scopes required by the selected tools."
+      }
+    }
+  },
+  "exportedAt": "2026-09-03T17:11:47.353Z"
+}

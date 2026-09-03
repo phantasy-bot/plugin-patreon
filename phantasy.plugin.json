@@ -1,0 +1,96 @@
+{
+  "name": "@phantasy/plugin-patreon",
+  "version": "0.1.0-beta",
+  "description": "Patreon API v2 audience, entitlement, and reviewed free/paid post-planning integration for Phantasy creator companions.",
+  "displayName": "Patreon",
+  "main": "./dist/index.js",
+  "workspace": "business",
+  "extensionKind": "integration",
+  "category": "creator-business",
+  "tags": [
+    "patreon",
+    "creator",
+    "members",
+    "tiers",
+    "publishing"
+  ],
+  "permissions": [
+    "internet"
+  ],
+  "dependencies": [],
+  "adminSurface": {
+    "tabId": "patreon",
+    "label": "Patreon",
+    "workspace": "business",
+    "kind": "generic",
+    "keywords": [
+      "patreon",
+      "creator",
+      "members",
+      "tiers",
+      "publishing"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      },
+      "campaignId": {
+        "type": "string"
+      },
+      "defaultAudience": {
+        "type": "string",
+        "enum": [
+          "public",
+          "members",
+          "tiers"
+        ],
+        "default": "public"
+      },
+      "defaultTierId": {
+        "type": "string"
+      },
+      "maxPages": {
+        "type": "number",
+        "default": 10
+      }
+    }
+  },
+  "license": "MIT",
+  "author": "Phantasy",
+  "homepage": "https://github.com/phantasy-bot/plugin-patreon",
+  "repository": "https://github.com/phantasy-bot/plugin-patreon",
+  "keywords": [
+    "patreon",
+    "creator",
+    "members",
+    "tiers",
+    "publishing"
+  ],
+  "platforms": [
+    "node"
+  ],
+  "productionReady": false,
+  "phantasy": {
+    "extensions": [
+      {
+        "path": "./dist/index.js",
+        "kind": "tool"
+      }
+    ],
+    "pluginDependencies": [],
+    "security": {
+      "secrets": [
+        "PATREON_ACCESS_TOKEN"
+      ],
+      "neverLog": [
+        "PATREON_ACCESS_TOKEN",
+        "accessToken"
+      ],
+      "securityWarning": "Patreon member data is sensitive. Keep tokens in the runtime secret manager and request only the scopes required by the selected tools."
+    }
+  }
+}

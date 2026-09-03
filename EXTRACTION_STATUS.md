@@ -2,17 +2,20 @@
 
 - Repo URL: https://github.com/phantasy-bot/plugin-patreon
 - Extraction phase: `source-extracted`
-- Source of truth: `monorepo`
+- Source of truth: `standalone-repo`
 - Runtime load mode: `git`
-- Source owner: `monorepo`
-- Source payload: `source-extract`
-- Monorepo package status: `transitional`
-- Sync mode: `source-extract`
+- Source owner: `standalone-repo`
+- Source payload: `standalone-only`
+- Monorepo package status: `removed`
+- Sync mode: `standalone-repo`
 
 ## Meaning
 
-This repo now receives a true source extraction payload from the main Phantasy monorepo. It should continue severing deep internal dependencies until the standalone repo becomes fully independent.
+This repo owns the Patreon implementation. The main Phantasy monorepo keeps
+only the plugin contract, catalog metadata, and git-install configuration.
 
 ## Next Step
 
-Continue replacing remaining monorepo-coupled imports with stable public package contracts, then publish from this repo directly.
+Maintain, test, and publish this plugin from this repository. Keep member data
+scopes narrow and leave Patreon post publication behind an operator-reviewed
+plan until the upstream API documents an official write endpoint.

@@ -21,58 +21,15 @@
   "dependencies": [],
   "visibility": "public",
   "repoUrl": "https://github.com/phantasy-bot/plugin-patreon",
-  "sourceOfTruth": "monorepo",
-  "sourceOwner": "monorepo",
-  "sourcePayload": "source-extract",
-  "syncMode": "source-extract",
+  "sourceOfTruth": "standalone-repo",
+  "sourceOwner": "standalone-repo",
+  "sourcePayload": "standalone-only",
+  "syncMode": "standalone-repo",
   "phase": "source-extracted",
-  "sourceExtract": {
-    "devDependencies": {
-      "@phantasy/agent": "^0.1.0-beta",
-      "vitest": "^3.2.4"
-    },
-    "files": [
-      {
-        "sourcePath": "packages/plugin-patreon/README.md",
-        "targetPath": "README.md"
-      },
-      {
-        "sourcePath": "packages/plugin-patreon/vitest.config.mts",
-        "targetPath": "vitest.config.mts"
-      },
-      {
-        "sourcePath": "packages/plugin-patreon/src/index.ts",
-        "targetPath": "src/index.ts"
-      },
-      {
-        "sourcePath": "packages/plugin-patreon/src/patreon-client.ts",
-        "targetPath": "src/patreon-client.ts"
-      },
-      {
-        "sourcePath": "packages/plugin-patreon/src/patreon-tools.ts",
-        "targetPath": "src/patreon-tools.ts"
-      },
-      {
-        "sourcePath": "packages/plugin-patreon/src/types.ts",
-        "targetPath": "src/types.ts"
-      },
-      {
-        "sourcePath": "packages/plugin-patreon/src/patreon-client.test.ts",
-        "targetPath": "src/patreon-client.test.ts"
-      }
-    ],
-    "replacements": [
-      {
-        "from": "@phantasy/plugin-sdk",
-        "to": "@phantasy/agent/plugins"
-      }
-    ],
-    "test": true
-  },
   "repoExists": true,
   "npmPublished": false,
   "runtimeLoadMode": "git",
-  "monorepoPackageStatus": "transitional",
+  "monorepoPackageStatus": "removed",
   "phantasy": {
     "displayName": "Patreon",
     "category": "creator-business",
@@ -169,5 +126,5 @@
       }
     }
   },
-  "exportedAt": "2026-09-03T17:11:47.353Z"
+  "exportedAt": "2026-09-03T17:17:59.982Z"
 }

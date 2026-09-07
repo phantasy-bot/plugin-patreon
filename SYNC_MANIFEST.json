@@ -126,5 +126,12 @@
       }
     }
   },
-  "exportedAt": "2026-09-03T17:17:59.982Z"
+  "exportedAt": "2026-09-03T17:17:59.982Z",
+  "forgejoUrl": "https://forgejo.thomasjvu.com/phantasy/plugin-patreon",
+  "mirror": {
+    "kind": "forgejo",
+    "url": "https://forgejo.thomasjvu.com/phantasy/plugin-patreon",
+    "role": "self-hosted-backup",
+    "canonical": "github"
+  }
 }

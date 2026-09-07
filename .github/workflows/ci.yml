@@ -20,11 +20,29 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22.12.0
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Verify package metadata
         run: |
           test "$(node -p "require('./package.json').name")" = "@phantasy/plugin-patreon"
           test "$(node -p "require('./package.json').version")" != ""
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
 
       - name: Verify publish artifacts
         run: |
@@ -33,4 +51,3 @@ jobs:
 
       - name: Run package dry run
         run: npm pack --dry-run
-

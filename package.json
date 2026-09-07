@@ -54,7 +54,7 @@
     "@types/node": "^24.0.0",
     "tsup": "^8.0.0",
     "typescript": "^5.9.2",
-    "@phantasy/agent": "^0.1.0-beta",
+    "@phantasy/agent": "file:./stubs/phantasy-agent",
     "vitest": "^3.2.4"
   },
   "phantasy": {

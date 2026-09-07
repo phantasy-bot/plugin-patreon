@@ -1,0 +1,10 @@
+{
+  "name": "@phantasy/agent",
+  "version": "0.1.0-beta",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./plugins": "./plugins.js",
+    "./plugin-runtime": "./plugin-runtime.js"
+  }
+}

@@ -36,6 +36,8 @@ var PatreonApiError = class extends Error {
     this.retryAfterSeconds = retryAfterSeconds;
     this.name = "PatreonApiError";
   }
+  status;
+  retryAfterSeconds;
 };
 function asResourceArray(value) {
   return Array.isArray(value) ? value : [value];
@@ -57,6 +59,7 @@ var PatreonClient = class {
   constructor(config) {
     this.config = config;
   }
+  config;
   async request(path, query = {}) {
     if (!this.config.accessToken) {
       throw new Error("PATREON_ACCESS_TOKEN is not configured");
